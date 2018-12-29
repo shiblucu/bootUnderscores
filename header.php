@@ -23,47 +23,48 @@
 <body <?php body_class(); ?>>
 
 <div id="page" class="site">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <a class="skip-link screen-reader-text"
-                   href="#content"><?php esc_html_e('Skip to content', 'simplexttc'); ?></a>
+    <div class="container-fluid">
+        <a class="skip-link screen-reader-text"
+           href="#content"><?php esc_html_e('Skip to content', 'simplexttc'); ?></a>
 
-                <header id="masthead" class="site-header">
+        <header id="masthead" class="site-header">
+
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar justify-content-md-center info-color-dark"
+                 role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="site-branding">
                         <?php
-                        the_custom_logo();
-                        if (is_front_page() && is_home()) :
-                            ?>
-                            <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                                      rel="home"><?php bloginfo('name'); ?></a></h1>
-                        <?php
+
+                        if (get_custom_logo()) :
+                            the_custom_logo();
                         else :
                             ?>
-                            <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                                     rel="home"><?php bloginfo('name'); ?></a></p>
+                        <h1 class="site-title"><a class="navbar-brand font-weight-bold" href="<?php echo esc_url(home_url('/')); ?>"
+                                                      rel="home"><?php bloginfo('name'); ?></a></h1>
                         <?php
-                        endif;
-                        $simplexttc_description = get_bloginfo('description', 'display');
-                        if ($simplexttc_description || is_customize_preview()) :
-                            ?>
-                            <p class="site-description"><?php echo $simplexttc_description; /* WPCS: xss ok. */ ?></p>
-                        <?php endif; ?>
+                        endif; ?>
                     </div><!-- .site-branding -->
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'depth' => 2,
+                        'container' => 'div',
+                        'container_class' => 'collapse navbar-collapse',
+                        'container_id' => 'bs-example-navbar-collapse-1',
+                        'menu_class' => 'nav navbar-nav ml-auto',
+                        'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker' => new WP_Bootstrap_Navwalker(),
+                    ));
+                    ?>
+                </div>
+            </nav><!-- #site-navigation -->
+        </header><!-- #masthead -->
+    </div> <!-- .container-fluid -->
 
-                    <nav id="site-navigation" class="main-navigation">
-                        <button class="menu-toggle" aria-controls="primary-menu"
-                                aria-expanded="false"><?php esc_html_e('Primary Menu', 'simplexttc'); ?></button>
-                        <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'menu-1',
-                            'menu_id' => 'primary-menu',
-                        ));
-                        ?>
-                    </nav><!-- #site-navigation -->
-                </header><!-- #masthead -->
-            </div> <!-- .col-md-12 -->
-        </div> <!-- .row -->
-    </div> <!-- .container -->
-    
     <div id="content" class="site-content">
