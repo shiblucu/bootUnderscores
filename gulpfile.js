@@ -35,6 +35,7 @@ gulp.task('watch', ['browserSync', 'sass'], function(){
 
     // reload browser on PHP, CSS and JavaScript file changes
     gulp.watch('./*.php', browserSync.reload);
+    gulp.watch('./template-parts/*.php', browserSync.reload);
     gulp.watch('./*.css', browserSync.reload);
     gulp.watch('./*.js', browserSync.reload);
 });
