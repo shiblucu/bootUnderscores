@@ -26,7 +26,8 @@ gulp.task('browserSync', function(){
         // server:{
         //     baseDir:'./'
         // },
-        proxy:'http://localhost/wpthemedev/'
+        proxy:'http://localhost/wpthemedev/',
+        "notify": false
     })
 });
 

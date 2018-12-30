@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package simplexttc
+ * @package bootunderscores
  */
 
 ?>
@@ -22,21 +22,21 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				simplexttc_posted_on();
-				simplexttc_posted_by();
+				bootunderscores_posted_on();
+				bootunderscores_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php simplexttc_post_thumbnail(); ?>
+	<?php bootunderscores_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'simplexttc' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bootunderscores' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -47,13 +47,13 @@
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'simplexttc' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bootunderscores' ),
 			'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php simplexttc_entry_footer(); ?>
+		<?php bootunderscores_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

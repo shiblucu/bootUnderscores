@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package simplexttc
+ * @package bootunderscores
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses simplexttc_header_style()
+ * @uses bootunderscores_header_style()
  */
-function simplexttc_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'simplexttc_custom_header_args', array(
+function bootunderscores_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'bootunderscores_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'simplexttc_header_style',
+		'wp-head-callback'       => 'bootunderscores_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'simplexttc_custom_header_setup' );
+add_action( 'after_setup_theme', 'bootunderscores_custom_header_setup' );
 
-if ( ! function_exists( 'simplexttc_header_style' ) ) :
+if ( ! function_exists( 'bootunderscores_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see simplexttc_custom_header_setup().
+	 * @see bootunderscores_custom_header_setup().
 	 */
-	function simplexttc_header_style() {
+	function bootunderscores_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

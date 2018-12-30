@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package simplexttc
+ * @package bootunderscores
  */
 
 ?>
@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-12">
                 <a class="skip-link screen-reader-text"
-                   href="#content"><?php esc_html_e('Skip to content', 'simplexttc'); ?></a>
+                   href="#content"><?php esc_html_e('Skip to content', 'bootunderscores'); ?></a>
 
                 <header id="masthead" class="site-header">
 
